@@ -9,6 +9,7 @@ import { CharacterCardContainerComponent } from './character-card-container/char
 import { ModalDetailComponent } from './modal-detail/modal-detail.component';
 import { HeroComponent } from './hero/hero.component';
 import { LayoutComponent } from './layout/layout.component';
+import { CharacterFilterComponent } from './character-filter/character-filter.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LayoutComponent } from './layout/layout.component';
     CharacterCardContainerComponent,
     ModalDetailComponent,
     HeroComponent,
-    LayoutComponent
+    LayoutComponent,
+    CharacterFilterComponent
   ],
   imports: [
     BrowserModule,

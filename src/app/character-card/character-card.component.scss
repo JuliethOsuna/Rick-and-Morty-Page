@@ -1,12 +1,43 @@
 .character-card {
     display: flex;
-    margin: 20px;
-    width: 218px;
     height: 104px;
 }
 
 .character-card__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     background: #F6F6F6;
     border-radius: 0px 10px 10px 0px;
     padding: 10px;
+}
+
+.character-card__name {
+    height: 22px;
+    margin-bottom: 8px;
+    border: 1px solid ;
+    border-image: linear-gradient(90deg, #C84E89 0%, #F15F79 100%) 0 1 100%;
+    font-size: 14px;
+}
+
+.character-card__location {
+    font-family: Roboto;
+    font-size: 13px;
+}
+
+.character-card__species {
+    color: #807E7E;
+    font-size: 13px;
+}
+
+.character-card__anchor {
+    background: linear-gradient(90deg, #C84E89 0%, #F15F79 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 13px;
+}
+
+.item-padding {
+    padding-bottom: 3px;
+    font-size: 13px;
 }

@@ -1,0 +1,100 @@
+.character-filter {
+    position: relative;
+}
+
+.character-filter__title {
+    display: flex;
+    justify-content: space-between;
+    height: 16px;
+    padding-bottom: 10px;
+    border: 1px solid ;
+    border-image: linear-gradient(90deg, #C84E89 0%, #F15F79 100%) 0 1 100%;
+}
+
+.filter-text {
+    font-size: 14px;
+    font-family: Play;
+}
+
+.character-filter__modal {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    left: 0;
+    top: 34px;
+    padding: 12px 24px 20px 13px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: 1px solid #F15F79 ;
+}
+
+.character-filter__select {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.label-filter-select {
+    font-size: 14px;
+    font-family: Play;
+    background: linear-gradient(90deg, #C84E89 0%, #F15F79 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 8px;
+}
+
+.font-color{
+    background: linear-gradient(90deg, #C84E89 0%, #F15F79 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.filter-select {
+    background: #F6F6F6;
+    border: 1px solid #C5C5C5;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 25px;
+    font-size: 14px;
+    font-family: Roboto;
+    color: #A2A2A2;
+    appearance: none;
+    background-image: url(../../assets/Vector.svg);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+}
+
+.filter-option {
+    font-size: 14px;
+    font-family: Roboto;
+    color: #A2A2A2;
+}
+
+.character-filter__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 48px;
+    padding: 0 2px;
+}
+
+.filter-button {
+    width: 97px;
+    height: 39px;
+    background: linear-gradient(90deg, #C84E89 0%, #F15F79 100%);
+    border-radius: 5px;
+    border: none;
+    font-family: Roboto;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.close-button {
+    width: 97px;
+    height: 39px;
+    border-radius: 5px;
+    border: none;
+    font-family: Roboto;
+    font-size: 14px;
+}

@@ -1,7 +1,7 @@
-.layoutContainer {
+.layout-container {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 25% 50px auto 25%;
+    grid-template-rows: 100px auto auto 25%;
 }
 
 .hero {
@@ -9,12 +9,17 @@
     grid-row: 1/2;
 }
 
-.characterCardContainer {
+.character-filter {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.character-card-container {
     grid-column: 1/2;
     grid-row: 3/4;
 }
 
-.navBar {
+.nav-bar {
     grid-column: 1/2;
     grid-row: 4/5;
 }

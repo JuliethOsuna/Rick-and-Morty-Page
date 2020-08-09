@@ -4,13 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { CharacterCardComponent } from './character-card/character-card.component';
-import { CharacterCardContainerComponent } from './character-card-container/character-card-container.component';
-import { ModalDetailComponent } from './modal-detail/modal-detail.component';
-import { HeroComponent } from './hero/hero.component';
-import { LayoutComponent } from './layout/layout.component';
-import { CharacterFilterComponent } from './character-filter/character-filter.component';
+import { NavBarComponent } from 'src/app/components/nav-bar/nav-bar.component';
+import { CharacterCardComponent } from 'src/app/components/character-card/character-card.component';
+import { CharacterCardContainerComponent } from 'src/app/components/character-card-container/character-card-container.component';
+import { ModalDetailComponent } from 'src/app/components/modal-detail/modal-detail.component';
+import { HeroComponent } from 'src/app/components/hero/hero.component';
+import { LayoutComponent } from 'src/app/components/layout/layout.component';
+import { CharacterFilterComponent } from 'src/app/components/character-filter/character-filter.component';
 
 @NgModule({
   declarations: [

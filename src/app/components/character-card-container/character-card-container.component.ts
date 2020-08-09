@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetCharacteresService } from '../services/get-characteres/get-characteres.service'
+import { CharacteresService } from 'src/app/services/characteres/characteres.service'
 
 @Component({
   selector: 'app-character-card-container',
@@ -10,7 +10,7 @@ export class CharacterCardContainerComponent implements OnInit {
 
   public showCharacterDetail;
 
-  constructor(private getCharacteresService:GetCharacteresService) { }
+  constructor(private getCharacteresService:CharacteresService) { }
 
   ngOnInit(): void {
     this.getCharacteresService.getAll().subscribe((res:any) => {

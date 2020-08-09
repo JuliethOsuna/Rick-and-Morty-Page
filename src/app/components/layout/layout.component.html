@@ -1,6 +1,6 @@
 <div class="layout-container">
     <app-hero class="hero"></app-hero>
     <app-character-filter class="character-filter"></app-character-filter>
-    <app-character-card-container class="character-card-container"></app-character-card-container>
-    <app-nav-bar class="nav-bar"></app-nav-bar>
+    <app-character-card-container class="character-card-container" [filterFor]="filterPage"></app-character-card-container>
+    <app-nav-bar (filterFor)="filterFor($event)" class="nav-bar"></app-nav-bar>
 </div>

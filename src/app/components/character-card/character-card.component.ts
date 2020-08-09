@@ -8,14 +8,15 @@ import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 export class CharacterCardComponent implements OnInit {
 
   @Output()showCharacterDetail: EventEmitter<any> = new EventEmitter<any>();
+  @Input()infoCard;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  viewDetails(){
-    this.showCharacterDetail.emit();
+  viewDetails(id){
+    this.showCharacterDetail.emit(id);
   }
 
 }

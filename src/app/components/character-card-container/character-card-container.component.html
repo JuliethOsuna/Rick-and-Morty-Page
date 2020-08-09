@@ -1,8 +1,22 @@
 <div class="character-card-container">
-    <app-character-card (showCharacterDetail)="showModal()" class="character-card"></app-character-card>
+    <app-character-card 
+        class="character-card"
+        *ngFor="let card of items"
+        [infoCard]="card"
+        (showCharacterDetail)="showModal($event)"
+    >
+    </app-character-card>
     <app-modal-detail [showModal]="showCharacterDetail" (closeModal)="closeModal()">
         <ng-template #body>
-            <app-character-card class="character-card__modal"></app-character-card>
+            <app-character-card [infoCard]="infoCard" class="character-card__modal"></app-character-card>
+            <div class="modal-detail__body">
+                <ul>
+                    <li *ngFor="let attribute of infoAttributes">
+                        <span class="attribute-name">{{attribute.name}}: </span>
+                        <span class="attribute-value">{{attribute.value}}</span>
+                    </li>
+                </ul>
+            </div>
         </ng-template>
     </app-modal-detail>
 </div>

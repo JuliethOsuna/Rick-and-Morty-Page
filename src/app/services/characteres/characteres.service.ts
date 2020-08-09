@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class GetCharacteresService {
+export class CharacteresService {
 
   private url = environment.apiUrl;
   private endPoint = `${this.url}character/`;

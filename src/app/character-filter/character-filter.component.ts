@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterFilterComponent implements OnInit {
 
+  public showFilter = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openModalFilter(){
+    this.showFilter = true;
+  }
+
+  closeModalFilter(){
+    this.showFilter = false;
   }
 
 }

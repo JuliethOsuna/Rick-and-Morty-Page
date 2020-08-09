@@ -1,3 +1,8 @@
 <div class="character-card-container">
-    <app-character-card class="characterCard"></app-character-card>
+    <app-character-card (showCharacterDetail)="showModal()" class="character-card"></app-character-card>
+    <app-modal-detail [showModal]="showCharacterDetail" (closeModal)="closeModal()">
+        <ng-template #body>
+            <app-character-card class="character-card__modal"></app-character-card>
+        </ng-template>
+    </app-modal-detail>
 </div>

@@ -1,0 +1,8 @@
+.character-card__modal {
+    ::ng-deep {
+        .character-card__img,
+        .character-card__info{
+            border-radius: 0;
+        }
+    }
+}

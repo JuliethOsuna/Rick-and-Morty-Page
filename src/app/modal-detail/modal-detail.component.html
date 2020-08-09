@@ -1,1 +1,9 @@
-<p>modal-detail works!</p>
+<div *ngIf="localShowModal" class="modal-detail__template">
+    <div (click)="close()" class="overlay"></div>
+    <div class="modal-detail__content">
+        <button class="closeButton" (click)="close()"></button>
+        <div class="modal-detail__body">
+            <ng-container *ngIf="bodyTemplateRef" [ngTemplateOutlet]="bodyTemplateRef"></ng-container>
+        </div>
+    </div>
+</div>

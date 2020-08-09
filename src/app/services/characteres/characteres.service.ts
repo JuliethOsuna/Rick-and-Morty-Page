@@ -15,4 +15,16 @@ export class CharacteresService {
   getAll(){
     return this.http.get(this.endPoint);
   }
+
+  getSingle(id){
+    return this.http.get(`${this.endPoint}${id}`)
+  }
+
+  getMultiple(id){//como se debe enviar parametro?
+    return this.http.get(`${this.endPoint}${id}`)
+  }
+
+  filter(request){
+    return this.http.get(`${this.endPoint}?${request}`)
+  }
 }

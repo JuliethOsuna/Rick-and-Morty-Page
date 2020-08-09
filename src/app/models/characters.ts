@@ -6,22 +6,23 @@ export interface MdCharacters {
 export interface MdInfo {
     count:number;
     next:string;
-    page:number;
+    pages:number;
     prev:string;
 }
 
 export interface MdResults {
-    created:string;
-    episode:Array<string>;
-    gender:string;
     id:number;
-    image:string;
-    location:MdLocation[];
-    origin:MdOrigin[];
-    species:string;
+    name:string;
     status:string;
+    species:string;
     type:string;
+    gender:string;
+    origin:MdOrigin;
+    location:MdLocation;
+    image:string;
+    episode:Array<string>;
     url:string;
+    created:string;
 }
 
 export interface MdLocation {

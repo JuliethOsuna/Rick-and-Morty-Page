@@ -6,7 +6,7 @@ export interface MdLocations {
 export interface MdInfo {
     count:number;
     next:string;
-    page:number;
+    pages:number;
     prev:string;
 }
 

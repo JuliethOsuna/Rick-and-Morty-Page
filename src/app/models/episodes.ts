@@ -5,17 +5,17 @@ export interface MdEpisodes {
 
 export interface MdInfo {
     count:number;
+    pages:number;
     next:string;
-    page:number;
     prev:string;
 }
 
 export interface MdResults {
-    air_date:string;
-    characters:Array<string>;
-    created:string;
-    episode:string;
     id:number;
     name:string;
+    air_date:string;
+    episode:string;
+    characters:Array<string>;
     url:string;
+    created:string;
 }

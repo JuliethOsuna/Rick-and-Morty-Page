@@ -1,6 +1,13 @@
 .character-card {
     display: flex;
     height: 104px;
+    margin-bottom: 15px;
+}
+
+.character-card__img {
+    width: 104px;
+    height: 104px;
+    border-radius: 10px 0px 0px 10px;
 }
 
 .character-card__info {
@@ -25,7 +32,15 @@
     font-size: 13px;
 }
 
-.character-card__species {
+.character-card__attribute-name {
+    display: inline-block;
+    color: #807E7E;
+    font-size: 13px;
+    width: 56px;
+}
+
+.character-card__attribute-value {
+    display: inline-block;
     color: #807E7E;
     font-size: 13px;
 }

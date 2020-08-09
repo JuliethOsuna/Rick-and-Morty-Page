@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+  public filterPage:string = "character";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  filterFor(item){
+    this.filterPage = item;
   }
 
 }

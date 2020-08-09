@@ -6,3 +6,46 @@
         }
     }
 }
+
+.character-card__modal {
+    ::ng-deep {
+        .character-card__attribute-name{
+            font-family: Play;
+            font-size: 12px;
+            background: linear-gradient(90deg, #C84E89 0%, #F15F79 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .character-card__attribute-value{
+            color: #404040;
+            font-size: 12px;        
+        }
+    }
+}
+
+.modal-detail__body {
+    display: flex;
+    flex-direction: column;
+    padding: 34px 14px 192px 16px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.attribute-name {
+    display: inline-block;
+    font-family: Play;
+    font-size: 14px;
+    background: linear-gradient(90deg, #C84E89 0%, #F15F79 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 80px;
+    margin-bottom: 13px;
+}
+
+.attribute-value {
+    display: inline-block;
+    color: #404040;
+    font-size: 14px;
+}

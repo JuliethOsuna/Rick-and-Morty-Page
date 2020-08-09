@@ -1,13 +1,14 @@
 <article class="character-card">
-    <img class="character-card__img" src="assets/Imagen (1).png" alt="">
+    <img *ngIf="infoCard.image" class="character-card__img" src="{{infoCard.image}}" alt="">
     <div class="character-card__info">
         <h3 class="character-card__name">
-            PRESENTADOR
+            {{infoCard.name}}
         </h3>
-        <p class="character-card__location item-padding">Cable Interdimensional</p>
-        <p class="character-card__species item-padding">Especie: 
-            <span class="character-card__species">Humana</span> 
+        <p class="character-card__location item-padding">{{infoCard.headline}}</p>
+        <p *ngFor="let attribute of infoCard.attributes"> 
+            <span class="character-card__attribute-name item-padding">{{attribute.name}}:</span>
+            <span class="character-card__attribute-value">{{attribute.value}}</span>
         </p>
-        <a (click)="viewDetails()" class="character-card__anchor item-padding">Ver detalles</a>
+        <a *ngIf="infoCard.showDetail" (click)="viewDetails(infoCard.id)" class="character-card__anchor item-padding">Ver detalles</a>
     </div>
 </article>

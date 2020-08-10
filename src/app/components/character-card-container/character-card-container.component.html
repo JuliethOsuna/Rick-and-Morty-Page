@@ -1,6 +1,6 @@
-<div class="character-card-container">
+<div class="container-cards">
     <app-character-card 
-        class="character-card"
+        class="container-cards__card"
         *ngFor="let card of items"
         [infoCard]="card"
         (showCharacterDetail)="showModal($event)"

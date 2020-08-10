@@ -4,11 +4,11 @@
         <h3 class="character-card__name">
             {{infoCard.name}}
         </h3>
-        <p class="character-card__location item-padding">{{infoCard.headline}}</p>
-        <p *ngFor="let attribute of infoCard.attributes"> 
-            <span class="character-card__attribute-name item-padding">{{attribute.name}}:</span>
+        <p class="character-card__location">{{infoCard.headline}}</p>
+        <p *ngFor="let attribute of infoCard.attributes" class="attributes-container"> 
+            <span class="character-card__attribute-name">{{attribute.name}}:</span>
             <span class="character-card__attribute-value">{{attribute.value}}</span>
         </p>
-        <a *ngIf="infoCard.showDetail" (click)="viewDetails(infoCard.id)" class="character-card__anchor item-padding">Ver detalles</a>
+        <button *ngIf="infoCard.showDetail" (click)="viewDetails(infoCard.id)" class="character-card__anchor item-padding">Ver detalles</button>
     </div>
 </article>

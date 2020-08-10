@@ -2,12 +2,21 @@
     display: flex;
     height: 104px;
     margin-bottom: 15px;
+
+    @media (min-width: 376px) {
+        height: auto;
+    }
 }
 
 .character-card__img {
     width: 104px;
     height: 104px;
     border-radius: 10px 0px 0px 10px;
+
+    @media (min-width: 376px) {
+        width: 300px;
+        height: auto;
+    }
 }
 
 .character-card__info {
@@ -17,6 +26,12 @@
     background: #F6F6F6;
     border-radius: 0px 10px 10px 0px;
     padding: 10px;
+
+    @media (min-width: 376px) {
+        width: 350px;
+        height: auto;
+        padding: 18px 20px 23px 23px;
+    }
 }
 
 .character-card__name {
@@ -25,11 +40,24 @@
     border: 1px solid ;
     border-image: linear-gradient(90deg, #C84E89 0%, #F15F79 100%) 0 1 100%;
     font-size: 14px;
+    padding-bottom: 3px;
+
+    @media (min-width: 376px) {
+        height: 34px;
+        font-size: 18px;
+        margin: 18px 0 12px 0;
+    }
 }
 
 .character-card__location {
     font-family: Roboto;
     font-size: 13px;
+    padding-bottom: 3px;
+
+    @media (min-width: 376px) {
+        font-size: 18px;
+        padding-bottom: 17px;
+    }
 }
 
 .character-card__attribute-name {
@@ -37,22 +65,44 @@
     color: #807E7E;
     font-size: 13px;
     width: 56px;
+
+    @media (min-width: 376px) {
+        font-size: 18px;
+        width: 70px;
+    }
 }
 
 .character-card__attribute-value {
     display: inline-block;
     color: #807E7E;
     font-size: 13px;
+    
+    @media (min-width: 376px) {
+        font-size: 18px;
+    }
 }
 
 .character-card__anchor {
+    border: none;
+    padding: 0;
+    text-align: left;
+    width: 74px;
+    margin-top: 5px;
     background: linear-gradient(90deg, #C84E89 0%, #F15F79 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 13px;
-}
 
-.item-padding {
-    padding-bottom: 3px;
-    font-size: 13px;
+    @media (min-width: 376px) {
+        width: 148px;
+        height: 39px;
+        margin-top: 116px;
+        background: linear-gradient(90deg, #C84E89 0%, #F15F79 100%);
+        -webkit-text-fill-color: white;
+        border-radius: 5px;
+        border: none;
+        font-family: Roboto;
+        text-align: center;
+        font-size: 18px;
+    }
 }

@@ -105,6 +105,7 @@ input, select {
 
 * {
     color: #404040;
+    box-sizing: border-box;
 }
 
 h3 {
@@ -121,4 +122,8 @@ span {
 
 a {
     font-family: Roboto;
+}
+
+button {
+    cursor: pointer;
 }

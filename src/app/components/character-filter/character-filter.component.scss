@@ -3,12 +3,17 @@
 }
 
 .character-filter__title {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
-    height: 16px;
-    padding-bottom: 10px;
     border: 1px solid ;
     border-image: linear-gradient(90deg, #C84E89 0%, #F15F79 100%) 0 1 100%;
+
+    @media (min-width: 376px) {
+        width: 25%;
+        height: 20%;
+        margin: 33px 0 63px 58px;
+    }
 }
 
 .filter-text {

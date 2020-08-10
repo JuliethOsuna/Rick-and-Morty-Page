@@ -19,6 +19,10 @@
     grid-column: 1/2;
     grid-row: 3/4;
     padding: 0 20px 120px 33px;
+
+    @media (min-width: 376px) {
+        padding: 0 60px 0 58px;
+    }
 }
 
 .nav-bar {

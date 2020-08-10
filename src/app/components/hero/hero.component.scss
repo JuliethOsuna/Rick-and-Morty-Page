@@ -9,10 +9,66 @@
     height: 68px;
     left: 0px;
     top: 0px;
+
+    @media (min-width: 376px) {
+/*         display: flex;
+        height: 560px;
+        padding: 90px 90px 40px 90px; */
+        height: 560px;
+        display: grid;
+        grid-template-columns: 33% 34% 33%;
+        grid-template-rows: 100%;
+    }
 }
 
 .logo-rick-and-morty {
     margin: auto;
     display: block;
     padding: 12px;
+    background-image: url('../../../assets/Rick_and_Morty.png');
+    width: 213px;
+    height: 63px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    @media (min-width: 376px) {
+        position: absolute;
+        top: 11px;
+        left: 0px;
+    }
+}
+
+.img-rick-and-morty {
+    flex-grow: 1;
+    background-image: url('../../../assets/Rick\ y\ Morty.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: 376px) {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+}
+
+.img-portal {
+    flex-grow: 1;
+    background-image: url('../../../assets/Portal.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: 376px) {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+}
+
+.nav-bar {
+    flex-grow: 1;
+
+    @media (min-width: 376px) {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        padding: 70px 50px 0 0px;;
+    }
 }

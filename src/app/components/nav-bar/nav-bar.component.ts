@@ -8,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   @Output()filterFor: EventEmitter<any> = new EventEmitter<any>();
+  @Output()query: EventEmitter<any> = new EventEmitter<any>();
 
 
   constructor() { }
@@ -16,11 +17,13 @@ export class NavBarComponent implements OnInit {
   }
 
   filterForCharacters(){
-    this.filterFor.emit("character")
+    this.filterFor.emit("character");
+    this.query.emit("");
   }
 
   filterForEpisodes(){
-    this.filterFor.emit("episode")
+    this.filterFor.emit("episode");
+    this.query.emit("");
   }
 
 }

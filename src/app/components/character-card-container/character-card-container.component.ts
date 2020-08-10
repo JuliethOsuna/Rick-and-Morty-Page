@@ -4,7 +4,6 @@ import { EpisodesService } from 'src/app/services/episodes/episodes.service';
 import { LocationsService } from 'src/app/services/locations/locations.service';
 import { MdCharacters } from 'src/app/models/characters';
 import { MdEpisodes } from 'src/app/models/episodes';
-import { MdLocations } from 'src/app/models/locations';
 
 @Component({
   selector: 'app-character-card-container',
@@ -15,6 +14,8 @@ export class CharacterCardContainerComponent implements OnInit {
 
   @Input()
   filterFor:string = "character";
+  @Input()
+  queryString:string = "";
 
   public showCharacterDetail;
   public items;
@@ -31,10 +32,11 @@ export class CharacterCardContainerComponent implements OnInit {
   ) { }
 
   ngOnChanges() {
-    console.log(this.filterFor)
     if(this.filterFor === "character"){
-      this.characteresService.getAll().subscribe((resCharacters:MdCharacters) => {
+
+      this.characteresService.filter(this.queryString).subscribe((resCharacters:MdCharacters) => {
         this.characters = resCharacters;
+
         this.items = resCharacters.results.map(item => {
             return {
               id: item.id,
@@ -50,8 +52,9 @@ export class CharacterCardContainerComponent implements OnInit {
           })
       })
     }else {
-      this.episodesService.getAll().subscribe((resEpisodes:MdEpisodes) => {
+      this.episodesService.filter(this.queryString).subscribe((resEpisodes:MdEpisodes) => {
         this.episodes = resEpisodes;
+        
         this.items = resEpisodes.results.map(item => {
           return {
             id: item.id,
@@ -69,7 +72,6 @@ export class CharacterCardContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.locationsService.getAll().subscribe((resLocations:MdLocations) => {})
   }
 
   showModal(id){

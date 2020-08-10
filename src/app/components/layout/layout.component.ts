@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutComponent implements OnInit {
 
   public filterPage:string = "character";
+  public queryString:string;
 
   constructor() { }
 
@@ -16,6 +17,10 @@ export class LayoutComponent implements OnInit {
 
   filterFor(item){
     this.filterPage = item;
+  }
+
+  sendQueryString(query){
+    this.queryString = query;
   }
 
 }

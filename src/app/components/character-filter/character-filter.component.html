@@ -4,33 +4,19 @@
         <img src="assets/Vector.png" alt="">
     </div>
     <div *ngIf="showFilter" class="character-filter__modal">
-        <form>
-            <div class="character-filter__select">
-                <label class="label-filter-select" for="filter1">Filtro 1:</label>
-                <select class="filter-select" id="filter1">
-                    <option class="filter-option" value="">1</option>
-                    <option class="filter-option"value="">1</option>
-
-                </select>
-            </div>
-            <div class="character-filter__select">
-                <label class="label-filter-select" for="filter2">Filtro 2:</label>
-                <select class="filter-select" id="filter2">
-                    <option class="filter-option" value="">1</option>
-                    <option class="filter-option"value="">1</option>
-                </select>
-            </div>
-            <div class="character-filter__select">
-                <label class="label-filter-select" for="filter3">Filtro 3:</label>
-                <select class="filter-select" id="filter3">
-                    <option class="filter-option" value="">1</option>
-                    <option class="filter-option" value="">2</option>
-
-                </select>
+        <form [formGroup]="filterForm">
+            <div *ngFor="let control of filters[filterFor]" class="character-filter__select">
+                <label class="label-filter-select" for="filter1">{{control.label}}:</label>
+                <input *ngIf="control.type === 'text'; else selectControl" class="filter-input" [formControlName]="control.control">
+                <ng-template #selectControl>
+                    <select class="filter-select" id="filter1" [formControlName]="control.control">
+                        <option *ngFor="let filterOption of control.options" class="filter-option" value="{{filterOption.value}}">{{filterOption.description}}</option>
+                    </select>
+                </ng-template>
             </div>
             <div class="character-filter__buttons">
-                <button class="filter-button">Filtrar</button>
-                <button class="close-button"(click)="closeModalFilter()" >Cerrar</button>
+                <button class="filter-button" (click)="filter()">Filtrar</button>
+                <button class="close-button" (click)="closeModalFilter()" >Cerrar</button>
             </div>
         </form>
     </div>

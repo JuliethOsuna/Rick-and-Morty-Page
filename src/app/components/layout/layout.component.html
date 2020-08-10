@@ -1,5 +1,5 @@
-<div class="layout-container">
-    <app-hero class="hero"></app-hero>
+<div (window:resize)="onResize()" class="layout-container">
+    <app-hero [width]="width" class="hero"></app-hero>
     <app-character-filter 
         class="character-filter"
         [filterFor]="filterPage" 
@@ -12,7 +12,7 @@
         [queryString]="queryString"
     >
     </app-character-card-container>
-    <app-nav-bar 
+    <app-nav-bar *ngIf="width < 376"
         class="nav-bar"
         (filterFor)="filterFor($event)" 
         (query)="sendQueryString($event)"

@@ -1,15 +1,24 @@
 .nav-bar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
+    border-radius: 5px; 
     background: linear-gradient(90deg, #C84E89 0%, #F15F79 100%);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+
+    @media (min-width: 376px) {
+        background: none;
+    }
 }
 
 .nav-bar__text {
     font-family: Creepster;
     color: white;
+    font-size: 14px;
+
+    @media (min-width: 376px) {
+        font-size: 24px;
+        padding-left: 30px
+    }
 }
 
 .nav-bar__item {
@@ -24,6 +33,14 @@
     width: 58px;
     height: 68px;
     margin-bottom: 7px;
+
+    @media (min-width: 376px) {
+        background-image: url('../../../assets/Meezeek\ 2.png');
+        background-size: cover;
+        width: 150px;
+        height: 371px;   
+        margin-bottom: 25px
+    }
 }
 
 .nav-bar__episodes-filter {
@@ -34,4 +51,12 @@
     height: 65px;
     margin-top: 6px;
     margin-bottom: 4px;
+
+    @media (min-width: 376px) {
+        background-image: url('../../../assets/Meezeek\ 1.png');
+        background-size: cover;
+        width: 191.77px;
+        height: 371px; 
+        margin-bottom: 18px  
+    }
 }

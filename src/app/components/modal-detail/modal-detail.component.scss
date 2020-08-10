@@ -31,6 +31,19 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 376px) {
+        width: 74.67vw;
+        height: 94.4vh;
+
+    }
+}
+
+.container {
+    @media (min-width: 376px) {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 .close-button {

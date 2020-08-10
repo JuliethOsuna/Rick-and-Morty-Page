@@ -1,6 +1,21 @@
 <div class="layout-container">
     <app-hero class="hero"></app-hero>
-    <app-character-filter class="character-filter"></app-character-filter>
-    <app-character-card-container class="character-card-container" [filterFor]="filterPage"></app-character-card-container>
-    <app-nav-bar (filterFor)="filterFor($event)" class="nav-bar"></app-nav-bar>
+    <app-character-filter 
+        class="character-filter"
+        [filterFor]="filterPage" 
+        (query)="sendQueryString($event)"
+    >
+    </app-character-filter>
+    <app-character-card-container 
+        class="character-card-container" 
+        [filterFor]="filterPage"
+        [queryString]="queryString"
+    >
+    </app-character-card-container>
+    <app-nav-bar 
+        class="nav-bar"
+        (filterFor)="filterFor($event)" 
+        (query)="sendQueryString($event)"
+    >
+    </app-nav-bar>
 </div>

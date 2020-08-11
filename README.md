@@ -6,8 +6,9 @@ Rick and Morty Page es una aplicación responsive para celular, podrá ver los e
 
 ## To do
 
--Implementar unit testing
--Quice que la comunicación entre componentes se manejará mediante inputs y outputs, una buena opción es implentar un Store de datos para evitar el prop drilling.
+Implementar unit testing.
+
+Quice que la comunicación entre componentes se manejará mediante inputs y outputs, una buena opción es implentar un Store de datos para evitar el prop drilling.
 
 
 ## Development server

@@ -13,6 +13,7 @@ import { HeroComponent } from 'src/app/components/hero/hero.component';
 import { LayoutComponent } from 'src/app/components/layout/layout.component';
 import { CharacterFilterComponent } from 'src/app/components/character-filter/character-filter.component';
 import { HeaderCardComponent } from './components/header-card/header-card.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HeaderCardComponent } from './components/header-card/header-card.compon
     HeroComponent,
     LayoutComponent,
     CharacterFilterComponent,
-    HeaderCardComponent
+    HeaderCardComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,

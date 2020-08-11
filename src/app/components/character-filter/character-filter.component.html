@@ -1,4 +1,5 @@
 <div class="character-filter">
+    <div  *ngIf="showFilter" (click)="closeModalFilter()" class="overlay"></div>
     <div class="character-filter__title" role="button" (click)="openModalFilter()">
         <span class="filter-text">Filtrar y ordenar</span>
         <img src="assets/Vector.png" alt="">

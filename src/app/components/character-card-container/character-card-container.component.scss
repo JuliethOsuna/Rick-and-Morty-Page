@@ -45,7 +45,7 @@
             @media (min-width: 376px) {
                 flex-direction: column;
                 width: 359px;
-                height: auto;
+                height: 100%;
                 padding: 34px 30px 301px 29px;
                 background-color: #F6F6F6;
             }
@@ -95,6 +95,7 @@
     @media (min-width: 376px) {
         height: 300px;
         margin-bottom: 76px;
+        width: 45.65%;
     }
 }
 

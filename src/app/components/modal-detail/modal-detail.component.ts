@@ -17,10 +17,21 @@ export class ModalDetailComponent {
 
   ngOnChanges(){
     this.localShowModal = this.showModal;
+    this.hideScrollBar();
   }
 
   close(){
     this.closeModal.emit();
   }
+
+  hideScrollBar(){
+    let body = document.querySelector("body");
+
+    if(this.localShowModal){
+      body.style.overflow = 'hidden';
+    }else {
+      body.style.overflow = 'visible';
+    }   
+  } 
 
 }

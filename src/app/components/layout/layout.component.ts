@@ -10,6 +10,8 @@ export class LayoutComponent implements OnInit {
   public filterPage:string = "character";
   public queryString:string;
   public width;
+  public prev;
+  public next;
 
   constructor() { }
 
@@ -28,6 +30,15 @@ export class LayoutComponent implements OnInit {
 
   sendQueryString(query){
     this.queryString = query;
+    console.log(this.queryString)
+  }
+
+  previusPage(prev){
+    this.prev = prev;
+  }
+
+  nextPage(next){
+    this.next = next;
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CharacteresService } from 'src/app/services/characteres/characteres.service';
 import { EpisodesService } from 'src/app/services/episodes/episodes.service';
 import { LocationsService } from 'src/app/services/locations/locations.service';
@@ -13,9 +13,14 @@ import { MdEpisodes } from 'src/app/models/episodes';
 export class CharacterCardContainerComponent implements OnInit {
 
   @Input()
-  filterFor:string = "character";
+    filterFor:string = "character";
   @Input()
-  queryString:string = "";
+    queryString:string = "";
+  @Output()
+    prevPage: EventEmitter<any> = new EventEmitter<any>();
+  @Output()
+    nextPage: EventEmitter<any> = new EventEmitter<any>();
+
 
   public showCharacterDetail;
   public items;
@@ -32,10 +37,13 @@ export class CharacterCardContainerComponent implements OnInit {
   ) { }
 
   ngOnChanges() {
+    console.log("padre", this.queryString)
     if(this.filterFor === "character"){
 
       this.characteresService.filter(this.queryString).subscribe((resCharacters:MdCharacters) => {
         this.characters = resCharacters;
+        this.prevPage.emit(this.characters.info.prev);
+        this.nextPage.emit(this.characters.info.next);
 
         this.items = resCharacters.results.map(item => {
             return {

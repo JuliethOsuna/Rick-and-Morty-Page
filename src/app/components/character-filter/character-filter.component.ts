@@ -139,10 +139,12 @@ export class CharacterFilterComponent implements OnInit {
 
   openModalFilter(){
     this.showFilter = true;
+    this.hideScrollBar();
   }
 
   closeModalFilter(){
     this.showFilter = false;
+    this.hideScrollBar();
   }
 
   filter(){
@@ -158,5 +160,15 @@ export class CharacterFilterComponent implements OnInit {
     this.showFilter = false;
     this.filterForm.reset();
   }
+
+  hideScrollBar(){
+    let body = document.querySelector("body");
+
+    if(this.showFilter){
+      body.style.overflow = 'hidden';
+    }else {
+      body.style.overflow = 'visible';
+    }   
+  } 
 
 }

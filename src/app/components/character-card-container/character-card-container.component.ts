@@ -29,6 +29,7 @@ export class CharacterCardContainerComponent implements OnInit {
   private characters:MdCharacters;
   private episodes:MdEpisodes;
   private formatDate = new Intl.DateTimeFormat('es');
+  private oldFilterFor;
 
   constructor(
     private characteresService:CharacteresService,
@@ -37,10 +38,14 @@ export class CharacterCardContainerComponent implements OnInit {
   ) { }
 
   ngOnChanges() {
-    console.log("padre", this.queryString)
+    let queryString = this.queryString;
+    if(this.oldFilterFor !== this.filterFor){
+      this.oldFilterFor = this.filterFor;
+      queryString = "";
+    }
     if(this.filterFor === "character"){
 
-      this.characteresService.filter(this.queryString).subscribe((resCharacters:MdCharacters) => {
+      this.characteresService.filter(queryString).subscribe((resCharacters:MdCharacters) => {
         this.characters = resCharacters;
         this.prevPage.emit(this.characters.info.prev);
         this.nextPage.emit(this.characters.info.next);
@@ -60,8 +65,10 @@ export class CharacterCardContainerComponent implements OnInit {
           })
       })
     }else {
-      this.episodesService.filter(this.queryString).subscribe((resEpisodes:MdEpisodes) => {
+      this.episodesService.filter(queryString).subscribe((resEpisodes:MdEpisodes) => {
         this.episodes = resEpisodes;
+        this.prevPage.emit(this.episodes.info.prev);
+        this.nextPage.emit(this.episodes.info.next);
         
         this.items = resEpisodes.results.map(item => {
           return {

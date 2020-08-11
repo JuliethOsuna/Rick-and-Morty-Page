@@ -30,7 +30,6 @@ export class LayoutComponent implements OnInit {
 
   sendQueryString(query){
     this.queryString = query;
-    console.log(this.queryString)
   }
 
   previusPage(prev){

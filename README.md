@@ -1,6 +1,7 @@
 # RickAndMortyPage
 
-En esta pagina encontrará un listado de todos los personajes de la serie Rick and Morty, podrá visualizar la información de cada uno de ellos a detalle. Puede escoger visualizar personajes y episodios, cuenta con un filtro para ordenar los personajes por nombre, estado, especie y genero, asi mismo, puede filtrar los capitulos por nombre o por temporada. 
+En esta pagina encontrará un listado de todos los personajes de la serie Rick and Morty, podrá visualizar la información de cada uno de ellos a detalle. Puede escoger visualizar personajes o episodios, cuenta con un filtro para ordenar los personajes por nombre, estado, especie y genero, asi mismo, puede filtrar los capitulos por nombre o por temporada. 
+Al final de la pagina encontrará el paginador para navegar por los resultados.
 
 Rick and Morty Page es una aplicación responsive para celular, podrá ver los estilos especificos cambiando el tamaño de pantalla.
 

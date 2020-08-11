@@ -16,18 +16,10 @@ export class PaginatorComponent implements OnInit {
 
   constructor() { }
 
-  ngOnChanges(): void {
-/*     this.onNextPage();
-    this.onPrevPage(); */
-    console.log(this.prevPage, this.nextPage)
-    
-  }
-
   ngOnInit(): void {
   }
 
   onNextPage(){
-    console.log("aqui")
     if(this.nextPage){
       const next = this.nextPage.split('?');
       this.queryString.emit(next[1]);

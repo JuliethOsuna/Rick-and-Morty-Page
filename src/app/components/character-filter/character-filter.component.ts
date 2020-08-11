@@ -159,6 +159,7 @@ export class CharacterFilterComponent implements OnInit {
     this.query.emit(queryString);
     this.showFilter = false;
     this.filterForm.reset();
+    this.hideScrollBar();
   }
 
   hideScrollBar(){

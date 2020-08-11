@@ -17,7 +17,7 @@
 
     @media (min-width: 376px) {
         font-size: 24px;
-        padding-left: 30px
+        padding-left: 30px;
     }
 }
 
@@ -29,6 +29,7 @@
 .nav-bar__character-filter {
     border: none;
     background: none;
+    outline: none;
     background-image: url('../../../assets/Rick\ \(1\).svg');
     width: 58px;
     height: 68px;
@@ -43,9 +44,14 @@
     }
 }
 
+.active{
+   opacity: 0.5; 
+}
+
 .nav-bar__episodes-filter {
     border: none;
     background: none;
+    outline: none;
     background-image: url('../../../assets/Morty.svg');
     width: 61.04px;
     height: 65px;

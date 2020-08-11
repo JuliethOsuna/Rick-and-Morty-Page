@@ -1,0 +1,25 @@
+.character-card__name {
+    height: 22px;
+    margin-bottom: 8px;
+    border: 1px solid ;
+    border-image: linear-gradient(90deg, #C84E89 0%, #F15F79 100%) 0 1 100%;
+    font-size: 14px;
+    padding-bottom: 3px;
+
+    @media (min-width: 376px) {
+        height: 34px;
+        font-size: 18px;
+        margin: 18px 0 12px 0;
+    }
+}
+
+.character-card__location {
+    font-family: Roboto;
+    font-size: 13px;
+    padding-bottom: 3px;
+
+    @media (min-width: 376px) {
+        font-size: 18px;
+        padding-bottom: 17px;
+    }
+}

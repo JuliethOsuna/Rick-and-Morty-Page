@@ -12,6 +12,7 @@ import { ModalDetailComponent } from 'src/app/components/modal-detail/modal-deta
 import { HeroComponent } from 'src/app/components/hero/hero.component';
 import { LayoutComponent } from 'src/app/components/layout/layout.component';
 import { CharacterFilterComponent } from 'src/app/components/character-filter/character-filter.component';
+import { HeaderCardComponent } from './components/header-card/header-card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CharacterFilterComponent } from 'src/app/components/character-filter/ch
     ModalDetailComponent,
     HeroComponent,
     LayoutComponent,
-    CharacterFilterComponent
+    CharacterFilterComponent,
+    HeaderCardComponent
   ],
   imports: [
     BrowserModule,

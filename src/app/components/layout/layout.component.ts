@@ -19,9 +19,7 @@ export class LayoutComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
 	onResize() {
-    // this.width = event.target.innerWidth;
     this.width = window.innerWidth;
-    console.log(this.width)
 	}
 
   filterFor(item){

@@ -3,5 +3,5 @@
     <div class="logo-rick-and-morty"></div>
     <div class="img-rick-and-morty"></div>
     <div class="img-portal"></div>
-    <app-nav-bar *ngIf="width > 375" class="nav-bar"></app-nav-bar>
+    <app-nav-bar *ngIf="width > 375" class="nav-bar" (filterFor)="filterFor($event)"></app-nav-bar>
 </div>

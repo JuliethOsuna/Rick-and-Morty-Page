@@ -1,5 +1,10 @@
 <div (window:resize)="onResize()" class="layout-container">
-    <app-hero [width]="width" class="hero"></app-hero>
+    <app-hero 
+        [width]="width" 
+        class="hero"
+        (filter)="filterFor($event)"
+    >
+    </app-hero>
     <app-character-filter 
         class="character-filter"
         [filterFor]="filterPage" 

@@ -1,10 +1,10 @@
 <div class="nav-bar">
     <div class="nav-bar__item">
-        <button (click)="filterForCharacters()" class="nav-bar__character-filter"></button>
+        <button (click)="filterForCharacters()" [ngClass]="{'active': activeButtonCharacter}" class="nav-bar__character-filter"></button>
         <span class="nav-bar__text">PERSONAJES</span>
     </div>
     <div class="nav-bar__item">
-        <button (click)="filterForEpisodes()" class="nav-bar__episodes-filter"></button>
+        <button (click)="filterForEpisodes()" [ngClass]="{'active': activeButtonEpisode}" class="nav-bar__episodes-filter"></button>
         <span class="nav-bar__text">EPISODIOS</span>
     </div>
 </div>

@@ -10,6 +10,8 @@ export class NavBarComponent implements OnInit {
   @Output()filterFor: EventEmitter<any> = new EventEmitter<any>();
   @Output()query: EventEmitter<any> = new EventEmitter<any>();
 
+  public activeButtonCharacter;
+  public activeButtonEpisode;
 
   constructor() { }
 
@@ -17,11 +19,15 @@ export class NavBarComponent implements OnInit {
   }
 
   filterForCharacters(){
+    this.activeButtonEpisode = false;
+    this.activeButtonCharacter = true;
     this.filterFor.emit("character");
     this.query.emit("");
   }
 
   filterForEpisodes(){
+    this.activeButtonCharacter = false;
+    this.activeButtonEpisode = true;
     this.filterFor.emit("episode");
     this.query.emit("");
   }

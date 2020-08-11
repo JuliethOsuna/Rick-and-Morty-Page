@@ -1,10 +1,7 @@
 <article class="character-card">
     <img *ngIf="infoCard.image" class="character-card__img" src="{{infoCard.image}}" alt="">
     <div class="character-card__info">
-        <h3 class="character-card__name">
-            {{infoCard.name}}
-        </h3>
-        <p class="character-card__location">{{infoCard.headline}}</p>
+        <app-header-card [characterName]="infoCard.name" [characterLocation]="infoCard.headline"></app-header-card>
         <p *ngFor="let attribute of infoCard.attributes" class="attributes-container"> 
             <span class="character-card__attribute-name">{{attribute.name}}:</span>
             <span class="character-card__attribute-value">{{attribute.value}}</span>

@@ -88,13 +88,31 @@ export class CharacterFilterComponent implements OnInit {
     episode: [
       {
         type: "text",
-        label: "Nombre",
+        label: "Nombre del episodio",
         control: "name"
       },
       {
-        type: "text",
-        label: "Episodio",
-        control: "episode"
+        type: "select",
+        label: "Temporada",
+        control: "episode",
+        options: [
+          {
+            value: "S01",
+            description: "Temporada 1"
+          },
+          {
+            value: "S02",
+            description: "Temporada 2"
+          },
+          {
+            value: "S03",
+            description: "Temporada 3"
+          },
+          {
+            value: "S04",
+            description: "Temporada 4"
+          }
+        ]
       },
     ]
   }

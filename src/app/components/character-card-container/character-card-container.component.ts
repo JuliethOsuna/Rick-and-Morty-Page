@@ -16,6 +16,8 @@ export class CharacterCardContainerComponent implements OnInit {
     filterFor:string = "character";
   @Input()
     queryString:string = "";
+  @Input()
+    width:number;
   @Output()
     prevPage: EventEmitter<any> = new EventEmitter<any>();
   @Output()

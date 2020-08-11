@@ -1,0 +1,19 @@
+.arrow-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.arrow-left {
+    cursor: pointer;
+    background-image: url('../../../assets/chevron-izquierdo.png');
+    width: 33px;
+    height: 32px;
+}
+
+.arrow-right {
+    cursor: pointer;
+    background-image: url('../../../assets/chevron-derecho.png');
+    outline: none;
+    width: 33px;
+    height: 32px;
+}

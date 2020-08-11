@@ -6,18 +6,18 @@
         (showCharacterDetail)="showModal($event)"
     >
     </app-character-card>
-    <app-modal-detail [showModal]="showCharacterDetail" (closeModal)="closeModal()">
-        <ng-template #body>
-            <app-character-card [infoCard]="infoCard" class="character-card__modal"></app-character-card>
-            <div class="modal-detail__body">
-                <app-header-card class="modal-detail__header" [characterName]="infoCard.name" [characterLocation]="infoCard.headline"></app-header-card>
-                <ul>
-                    <li *ngFor="let attribute of infoAttributes">
-                        <span class="attribute-name">{{attribute.name}}: </span>
-                        <span class="attribute-value">{{attribute.value}}</span>
-                    </li>
-                </ul>
-            </div>
-        </ng-template>
-    </app-modal-detail>
 </div>
+<app-modal-detail [showModal]="showCharacterDetail" (closeModal)="closeModal()">
+    <ng-template #body>
+        <app-character-card [infoCard]="infoCard" class="character-card__modal"></app-character-card>
+        <div class="modal-detail__body">
+            <app-header-card class="modal-detail__header" [characterName]="infoCard.name" [characterLocation]="infoCard.headline"></app-header-card>
+            <ul>
+                <li *ngFor="let attribute of infoAttributes">
+                    <span class="attribute-name">{{attribute.name}}: </span>
+                    <span class="attribute-value">{{attribute.value}}</span>
+                </li>
+            </ul>
+        </div>
+    </ng-template>
+</app-modal-detail>

@@ -10,7 +10,7 @@ export class NavBarComponent implements OnInit {
   @Output()filterFor: EventEmitter<any> = new EventEmitter<any>();
   @Output()query: EventEmitter<any> = new EventEmitter<any>();
 
-  public activeButtonCharacter;
+  public activeButtonCharacter = true;
   public activeButtonEpisode;
 
   constructor() { }

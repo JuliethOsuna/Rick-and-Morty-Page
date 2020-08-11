@@ -15,8 +15,16 @@
         class="character-card-container" 
         [filterFor]="filterPage"
         [queryString]="queryString"
+        (prevPage)="previusPage($event)"
+        (nextPage)="nextPage($event)"
     >
     </app-character-card-container>
+    <app-paginator
+        [prevPage]="prev"
+        [nextPage]="next"
+        (queryString)="sendQueryString($event)"
+    >
+    </app-paginator>
     <app-nav-bar *ngIf="width < 376"
         class="nav-bar"
         (filterFor)="filterFor($event)" 

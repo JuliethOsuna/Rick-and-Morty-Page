@@ -1,26 +1,22 @@
 # RickAndMortyPage
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+En esta pagina encontrará un listado de todos los personajes de la serie Rick and Morty, podrá visualizar la información de cada uno de ellos a detalle. Puede escoger visualizar personajes y episodios, cuenta con un filtro para ordenar los personajes por nombre, estado, especie y genero, asi mismo, puede filtrar los capitulos por nombre o por temporada. 
+
+Rick and Morty Page es una aplicación responsive para celular, podrá ver los estilos especificos cambiando el tamaño de pantalla.
+
+## To do
+
+-Implementar unit testing
+-Quice que la comunicación entre componentes se manejará mediante inputs y outputs, una buena opción es implentar un Store de datos para evitar el prop drilling.
+
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Correr el comando `npm start` para el servidor de desarrollo. Navega al `http://localhost:4200/`. La aplicación automaticamente se recaragara cuando haya algun cambio en los archivos.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Correr el comando `npm run build --prod` para construir el proyecto. Los artefactos del build se guardarán en el directorio `dist/`.
 
 ## Further help
 

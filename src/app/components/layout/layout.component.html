@@ -1,35 +1,10 @@
 <div (window:resize)="onResize()" class="layout-container">
-    <app-hero 
-        [width]="width" 
-        class="hero"
-        (filter)="filterFor($event)"
-    >
-    </app-hero>
-    <app-character-filter 
-        class="character-filter"
-        [filterFor]="filterPage" 
-        (query)="sendQueryString($event)"
-    >
-    </app-character-filter>
+    <app-hero [width]="width" class="hero"></app-hero>
+    <app-character-filter class="character-filter"></app-character-filter>
     <app-character-card-container 
         class="character-card-container" 
-        [filterFor]="filterPage"
-        [queryString]="queryString"
         [width]="width"
-        (prevPage)="previusPage($event)"
-        (nextPage)="nextPage($event)"
     >
-    </app-character-card-container>
-    <app-paginator
-        [prevPage]="prev"
-        [nextPage]="next"
-        (queryString)="sendQueryString($event)"
-    >
-    </app-paginator>
-    <app-nav-bar *ngIf="width < 376"
-        class="nav-bar"
-        (filterFor)="filterFor($event)" 
-        (query)="sendQueryString($event)"
-    >
-    </app-nav-bar>
+    </app-character-card-container><app-paginator></app-paginator>
+    <app-nav-bar *ngIf="width < 376" class="nav-bar"></app-nav-bar>
 </div>

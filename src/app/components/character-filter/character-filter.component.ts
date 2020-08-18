@@ -1,19 +1,19 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { filterPage } from 'src/app/store/actions';
+import { MdRootStore } from 'src/app/models/store';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Observable } from 'rxjs';
+import { Store, select } from '@ngrx/store';
 
 @Component({
   selector: 'app-character-filter',
   templateUrl: './character-filter.component.html',
   styleUrls: ['./character-filter.component.scss']
 })
-export class CharacterFilterComponent implements OnInit {
 
-  @Input()
-  filterFor:string = "character";
-  @Output()
-  query: EventEmitter<any> = new EventEmitter<any>();
+export class CharacterFilterComponent {
 
+  public filterFor;
   public filterForm:FormGroup;
   public showFilter = false;
   public filters = {
@@ -117,15 +117,18 @@ export class CharacterFilterComponent implements OnInit {
     ]
   }
 
-  constructor(private builder:FormBuilder) { }
-
-  ngOnChanges() {
+  constructor(
+    private builder:FormBuilder,
+    private store:Store<MdRootStore>,
+  ) {
     this.createForm();
-    this.createDinamicControls();
-  }
 
-  ngOnInit(): void {
-  }
+    this.store
+      .pipe(select(({application:{show}}) => show)).subscribe((show) => {
+        this.filterFor = show;
+        this.createDinamicControls();
+      });
+   }
 
   createForm(){
     this.filterForm = this.builder.group({})
@@ -156,7 +159,8 @@ export class CharacterFilterComponent implements OnInit {
       return accumulator
     }, "");
 
-    this.query.emit(queryString);
+    this.store.dispatch(filterPage({filter: queryString}));
+
     this.showFilter = false;
     this.filterForm.reset();
     this.hideScrollBar();

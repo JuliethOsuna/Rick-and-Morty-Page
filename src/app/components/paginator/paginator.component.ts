@@ -1,4 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { filterPage } from 'src/app/store/actions';
+import { MdRootStore } from 'src/app/models/store';
 
 @Component({
   selector: 'app-paginator',
@@ -7,22 +10,25 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 })
 export class PaginatorComponent implements OnInit {
 
-  @Input()
-    prevPage;
-  @Input()
-    nextPage;
-  @Output()
-    queryString: EventEmitter<any> = new EventEmitter<any>();
+  public prevPage;
+  public nextPage;
 
-  constructor() { }
+  constructor(private store:Store<MdRootStore>) { 
+    this.store
+    .pipe(select(({application:{nextPage, prevPage}}) => ({nextPage, prevPage}))).subscribe(({nextPage, prevPage}) => {
+      this.prevPage = prevPage;
+      this.nextPage = nextPage;
+    });
+  }
 
   ngOnInit(): void {
+    
   }
 
   onNextPage(){
     if(this.nextPage){
       const next = this.nextPage.split('?');
-      this.queryString.emit(next[1]);
+      this.store.dispatch(filterPage({filter: next[1]}));
     }
      
   }
@@ -30,7 +36,7 @@ export class PaginatorComponent implements OnInit {
   onPrevPage(){
     if(this.prevPage){
       const prev = this.prevPage.split('?');
-      this.queryString.emit(prev[1]);
+      this.store.dispatch(filterPage({filter: prev[1]}));
     }
   }
 

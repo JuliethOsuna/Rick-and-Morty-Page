@@ -1,29 +1,27 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store, select } from '@ngrx/store';
+
 import { CharacteresService } from 'src/app/services/characteres/characteres.service';
 import { EpisodesService } from 'src/app/services/episodes/episodes.service';
 import { LocationsService } from 'src/app/services/locations/locations.service';
 import { MdCharacters } from 'src/app/models/characters';
 import { MdEpisodes } from 'src/app/models/episodes';
+import { MdRootStore } from 'src/app/models/store';
+import { paginator } from 'src/app/store/actions';
 
 @Component({
   selector: 'app-character-card-container',
   templateUrl: './character-card-container.component.html',
   styleUrls: ['./character-card-container.component.scss']
 })
-export class CharacterCardContainerComponent implements OnInit {
+export class CharacterCardContainerComponent {
 
-  @Input()
-    filterFor:string = "character";
-  @Input()
-    queryString:string = "";
   @Input()
     width:number;
-  @Output()
-    prevPage: EventEmitter<any> = new EventEmitter<any>();
-  @Output()
-    nextPage: EventEmitter<any> = new EventEmitter<any>();
 
-
+  public filterFor;
+  public queryString;
   public showCharacterDetail;
   public items;
   public infoCard;
@@ -34,12 +32,25 @@ export class CharacterCardContainerComponent implements OnInit {
   private oldFilterFor;
 
   constructor(
+    private store:Store<MdRootStore>,
     private characteresService:CharacteresService,
     private episodesService:EpisodesService,
     private locationsService:LocationsService
-  ) { }
+  ) {
+    this.store
+      .pipe(select(({application:{show}}) => show)).subscribe((show) => {
+        this.filterFor = show;
+        this.getData();
+      });
 
-  ngOnChanges() {
+    this.store
+      .pipe(select(({application:{filter}}) => filter)).subscribe((filter) => {
+        this.queryString = filter;
+        this.getData();
+      });
+   }
+
+  getData() {
     let queryString = this.queryString;
     if(this.oldFilterFor !== this.filterFor){
       this.oldFilterFor = this.filterFor;
@@ -49,8 +60,7 @@ export class CharacterCardContainerComponent implements OnInit {
 
       this.characteresService.filter(queryString).subscribe((resCharacters:MdCharacters) => {
         this.characters = resCharacters;
-        this.prevPage.emit(this.characters.info.prev);
-        this.nextPage.emit(this.characters.info.next);
+        this.store.dispatch(paginator({prevPage: this.characters.info.prev, nextPage: this.characters.info.next}));
 
         this.items = resCharacters.results.map(item => {
             return {
@@ -69,8 +79,7 @@ export class CharacterCardContainerComponent implements OnInit {
     }else {
       this.episodesService.filter(queryString).subscribe((resEpisodes:MdEpisodes) => {
         this.episodes = resEpisodes;
-        this.prevPage.emit(this.episodes.info.prev);
-        this.nextPage.emit(this.episodes.info.next);
+        this.store.dispatch(paginator({prevPage: this.episodes.info.prev, nextPage: this.episodes.info.next}));
         
         this.items = resEpisodes.results.map(item => {
           return {
@@ -86,9 +95,6 @@ export class CharacterCardContainerComponent implements OnInit {
         })
       })
     }
-  }
-
-  ngOnInit(): void {
   }
 
   showModal(id){

@@ -1,4 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { filterFor } from 'src/app/store/actions';
+import { MdRootStore } from 'src/app/models/store';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,13 +10,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  @Output()filterFor: EventEmitter<any> = new EventEmitter<any>();
-  @Output()query: EventEmitter<any> = new EventEmitter<any>();
-
   public activeButtonCharacter = true;
   public activeButtonEpisode;
 
-  constructor() { }
+  constructor(private store:Store<MdRootStore>) { 
+  }
 
   ngOnInit(): void {
   }
@@ -21,15 +22,13 @@ export class NavBarComponent implements OnInit {
   filterForCharacters(){
     this.activeButtonEpisode = false;
     this.activeButtonCharacter = true;
-    this.filterFor.emit("character");
-    this.query.emit("");
+    this.store.dispatch(filterFor({show: 'character'}));
   }
 
   filterForEpisodes(){
     this.activeButtonCharacter = false;
     this.activeButtonEpisode = true;
-    this.filterFor.emit("episode");
-    this.query.emit("");
+    this.store.dispatch(filterFor({show: 'episode'}));
   }
 
 }
